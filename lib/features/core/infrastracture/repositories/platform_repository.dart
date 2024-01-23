@@ -16,7 +16,7 @@ class PlatformRepository implements IPlatformRepository {
       }
 
       final platformDimension =
-          deviceWidth < Constants.mobileWidthThreshold ? PlatformDimensionEnum.mobile : PlatformDimensionEnum.desktop;
+          deviceWidth < Constants.mobileWidthThreshold || deviceWidth < Constants.tabletWidthThreshold? PlatformDimensionEnum.mobile : PlatformDimensionEnum.desktop;
 
       return Right(platformDimension);
     } on Exception catch (e) {

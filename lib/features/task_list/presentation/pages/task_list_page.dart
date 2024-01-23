@@ -15,12 +15,15 @@ class TaskListPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider<TaskListBloc>(
-      create: (context) => sl<TaskListBloc>(),
+      create: (context) => sl<TaskListBloc>()..add(const GetTaskListEvent(userId: 'userId')),
       child: Scaffold(
         appBar: AppBar(
           title: const Text('Film Planner'),
-          actions: const [
-            HelpIconButton(),
+          centerTitle: false,
+          actions: [
+            HelpIconButton(
+              onPressed: () {},
+            ),
           ],
         ),
         body: BlocBuilder<TaskListBloc, TaskListState>(
@@ -39,9 +42,11 @@ class TaskListPage extends StatelessWidget {
             );
           },
         ),
-        floatingActionButton: const MessageFloatingIcon(),
-        floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
+        floatingActionButton: MessageFloatingIcon(
+          onPressed: () {},
+        ),
         floatingActionButtonAnimator: FloatingActionButtonAnimator.scaling,
+        floatingActionButtonLocation: FloatingActionButtonLocation.miniEndDocked,
       ),
     );
   }
