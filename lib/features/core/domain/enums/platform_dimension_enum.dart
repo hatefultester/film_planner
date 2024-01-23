@@ -1,0 +1,4 @@
+enum PlatformDimensionEnum {
+  mobile,
+  desktop;
+}
