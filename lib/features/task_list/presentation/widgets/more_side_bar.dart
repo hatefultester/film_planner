@@ -42,10 +42,11 @@ class _MoreSideBarState extends State<MoreSideBar> {
                         : const BorderRadius.only(topRight: Radius.circular(4), bottomRight: Radius.circular(4)),
                   ),
                   child: Center(
-                      child: Icon(
-                    isExpanded ? Icons.arrow_back_ios_rounded : Icons.arrow_forward_ios_rounded,
-                    size: 16,
-                  )),
+                    child: Icon(
+                      isExpanded ? Icons.arrow_back_ios_rounded : Icons.arrow_forward_ios_rounded,
+                      size: 16,
+                    ),
+                  ),
                 ),
               ),
             ),
